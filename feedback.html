@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        background-image: url("image/bg_image.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: white;
+        opacity: 0.85;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #555;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: #f9fafc;
+        color: #333;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus,
+      select:focus {
+        border-color: #4caf50;
+        outline: none;
+      }
+
+      ::placeholder {
+        color: #999;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Feedback Form</h2>
+      <form
+        id="feedbackForm"
+        action="/submit_feedback"
+        method="post"
+        onsubmit="return submitForm()"
+      >
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder="Enter your name"
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Enter your email"
+        />
+
+        <label for="product">Product:</label>
+        <select id="product" name="product" required>
+          <option value="">Select Product</option>
+          <option value="Laptop">Laptop</option>
+          <option value="Smartphone">Smartphone</option>
+          <option value="Tablet">Tablet</option>
+          <option value="Camera">Camera</option>
+        </select>
+
+        <label>Rate our services:</label>
+        <label
+          ><input type="radio" name="rating" value="Excellent" />
+          Excellent</label
+        >
+        <label><input type="radio" name="rating" value="Good" /> Good</label>
+        <label
+          ><input type="radio" name="rating" value="Average" /> Average</label
+        >
+        <label><input type="radio" name="rating" value="Poor" /> Poor</label>
+
+        <label>Features you liked (check all that apply):</label>
+        <label
+          ><input type="checkbox" name="features" value="Design" />
+          Design</label
+        >
+        <label
+          ><input type="checkbox" name="features" value="Performance" />
+          Performance</label
+        >
+        <label
+          ><input type="checkbox" name="features" value="Battery Life" />
+          Battery Life</label
+        >
+        <label
+          ><input type="checkbox" name="features" value="Camera Quality" />
+          Camera Quality</label
+        >
+
+        <label for="comments">Comments:</label>
+        <textarea
+          id="comments"
+          name="comments"
+          rows="4"
+          placeholder="Enter your comments"
+        ></textarea>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <script>
+      function submitForm() {
+        alert("Form successfully submitted!");
+
+        document.getElementById("feedbackForm").reset();
+
+        return false;
+      }
+    </script>
+  </body>
+</html>
