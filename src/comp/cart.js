@@ -76,6 +76,7 @@ const Cart = ({ cart, setCart }) => {
                     </div>
                     <div className="quantity">
                       <button onClick={() => incqty(curElm)}>+</button>
+
                       <input type="number" value={curElm.qty}></input>
                       <button onClick={() => decqty(curElm)}>-</button>
                     </div>

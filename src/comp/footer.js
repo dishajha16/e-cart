@@ -6,7 +6,18 @@ import {
   FaHeadphonesAlt,
   FaWallet,
 } from "react-icons/fa";
+
 const Footer = () => {
+  const handleAboutUsClick = () => {
+    window.open("/about.html", "_blank");
+  };
+
+  const handleFeedbackClick = () => {
+    window.open("/feedback.html", "_blank");
+  };
+  const HandleMagazineclick = () => {
+    window.open("/mag.html", "_blank");
+  };
   return (
     <>
       <div className="footer">
@@ -54,7 +65,7 @@ const Footer = () => {
               <img
                 src="image/logo.webp"
                 alt=""
-                height="300px"
+                height="200px"
                 width="500px"
               ></img>
               <p>
@@ -66,10 +77,9 @@ const Footer = () => {
               <div className="box">
                 <h3>Your Account</h3>
                 <ul>
-                  <li>About us</li>
-                  <li>Account</li>
+                  <li onClick={handleAboutUsClick}>About</li>
                   <li>Payment</li>
-                  <li>sales</li>
+                  <li onClick={handleFeedbackClick}>Feedback</li>
                 </ul>
               </div>
               <div className="box">
@@ -77,8 +87,7 @@ const Footer = () => {
                 <ul>
                   <li>Delivery</li>
                   <li>Track Oder</li>
-                  <li>New product</li>
-                  <li>old product</li>
+                  <li onClick={HandleMagazineclick}>our magazine</li>
                 </ul>
               </div>
               <div className="box">

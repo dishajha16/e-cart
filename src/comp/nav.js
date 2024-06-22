@@ -69,7 +69,7 @@ const Nav = ({ search, setSearch, searchproduct }) => {
             </ul>
           </div>
           <div className="offer">
-            <p>flat 10% over all iphone</p>
+            <p>Flat 10% over all iphone</p>
           </div>
         </div>
       </div>
